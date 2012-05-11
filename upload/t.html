@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script src="static/js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="static/js/lightbox.js"></script>
+        <link href="static/css/lightbox.css" rel="stylesheet" />
+        <link href="static/t.css" rel="stylesheet" />
+    </head>
+    <body>
+        <form enctype="multipart/form-data" action="/upload" method="post">
+            Upload File: <input type="file" name="file1" /><input type="submit" value="upload" />
+        </form>
+
+        {% for img in img_list %}
+        <a class='highlightit' href="{{ img[0] }}" rel="lightbox[roadtrip]" title="my title"><img src="{{ img[1] }}"></img></a>
+        {% end %}
+    </body>
+</html>
